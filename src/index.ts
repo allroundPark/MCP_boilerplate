@@ -28,29 +28,32 @@ export class BoilerplateMCP extends PaidMcpAgent<Env, State, AgentProps> {
 		tools.addTool(this);
 		tools.calculateTool(this);
 
-		// Example of a free tool that checks for active subscriptions and the status of the logged in user's Stripe customer ID
-		tools.checkPaymentHistoryTool(this, {
-			BASE_URL: this.env.BASE_URL,
-			STRIPE_SECRET_KEY: this.env.STRIPE_SECRET_KEY
-		});
+		// Stripe 도구들은 나중에 Stripe 설정 후 활성화
+		// TODO: Stripe API 키 설정 후 주석 해제
+		
+		// // Example of a free tool that checks for active subscriptions and the status of the logged in user's Stripe customer ID
+		// tools.checkPaymentHistoryTool(this, {
+		// 	BASE_URL: this.env.BASE_URL,
+		// 	STRIPE_SECRET_KEY: this.env.STRIPE_SECRET_KEY
+		// });
 
-		// Example of a paid tool that requires a logged in user and a one-time payment
-		tools.onetimeAddTool(this, {
-			STRIPE_ONE_TIME_PRICE_ID: this.env.STRIPE_ONE_TIME_PRICE_ID,
-			BASE_URL: this.env.BASE_URL
-		});
+		// // Example of a paid tool that requires a logged in user and a one-time payment
+		// tools.onetimeAddTool(this, {
+		// 	STRIPE_ONE_TIME_PRICE_ID: this.env.STRIPE_ONE_TIME_PRICE_ID,
+		// 	BASE_URL: this.env.BASE_URL
+		// });
 
-		// Example of a paid tool that requires a logged in user and a subscription
-		tools.subscriptionTool(this, {
-			STRIPE_SUBSCRIPTION_PRICE_ID: this.env.STRIPE_SUBSCRIPTION_PRICE_ID,
-			BASE_URL: this.env.BASE_URL
-		});
+		// // Example of a paid tool that requires a logged in user and a subscription
+		// tools.subscriptionTool(this, {
+		// 	STRIPE_SUBSCRIPTION_PRICE_ID: this.env.STRIPE_SUBSCRIPTION_PRICE_ID,
+		// 	BASE_URL: this.env.BASE_URL
+		// });
 
-		// Example of a paid tool that requires a logged in user and a subscription with metered usage
-		tools.meteredAddTool(this, {
-			STRIPE_METERED_PRICE_ID: this.env.STRIPE_METERED_PRICE_ID,
-			BASE_URL: this.env.BASE_URL
-		});
+		// // Example of a paid tool that requires a logged in user and a subscription with metered usage
+		// tools.meteredAddTool(this, {
+		// 	STRIPE_METERED_PRICE_ID: this.env.STRIPE_METERED_PRICE_ID,
+		// 	BASE_URL: this.env.BASE_URL
+		// });
 	}
 }
 
